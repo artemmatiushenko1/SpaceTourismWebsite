@@ -1,0 +1,59 @@
+@import './variables';
+
+.heading--primary {
+  font-size: 15rem;
+  font-family: $font-secondary;
+  font-weight: 400;
+}
+
+.heading--secondary {
+  font-size: 10rem;
+  font-family: $font-secondary;
+  font-weight: 400;
+}
+
+.heading--tertiary {
+  font-size: 5.6rem;
+  font-family: $font-secondary;
+  font-weight: 400;
+}
+
+.heading--fourth {
+  font-size: 3.2rem;
+  font-family: $font-secondary;
+  font-weight: 400;
+}
+
+.heading--fifth {
+  font-size: 2.8rem;
+  font-family: $font-tertiary;
+  font-weight: 400;
+  letter-spacing: 4.75px;
+}
+
+.sub-heading--primary {
+  font-size: 2.8rem;
+  font-family: $font-secondary;
+  font-weight: 400;
+}
+
+.sub-heading--secondary {
+  font-size: 1.4rem;
+  font-family: $font-secondary;
+  font-weight: 400;
+  letter-spacing: 2.35;
+}
+
+.nav-text {
+  font-size: 1.6rem;
+  font-family: $font-tertiary;
+  font-weight: 400;
+  letter-spacing: 2.7;
+}
+
+.body-text {
+  font-size: 1.8rem;
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 3.2rem;
+}

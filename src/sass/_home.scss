@@ -1,4 +1,65 @@
 @import './variables';
+@import './typography';
 
-.Home {
+.home {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 10vw;
+  padding: 0 16.5rem;
+  padding-top: 25rem;
+
+  &__subheading {
+    line-height: 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+
+  &__heading {
+    line-height: 17rem;
+    color: #d0d6f9;
+  }
+
+  &__paragraph {
+    line-height: 3.2rem;
+  }
+
+  &__btn-explore {
+    align-self: center;
+    justify-self: center;
+  }
+
+  &__btn-explore:link,
+  &__btn-explore:visited {
+    align-self: end;
+    justify-self: end;
+
+    text-decoration: none;
+    color: #0b0d17;
+    text-transform: uppercase;
+    font-size: 3.2rem;
+    width: 27rem;
+    height: 27rem;
+    background-color: $color-text-primary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__btn-explore::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba($color-text-primary, 0.1);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.2s ease;
+  }
+
+  &__btn-explore:hover::before {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
 }

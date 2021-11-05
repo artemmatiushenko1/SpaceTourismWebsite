@@ -1,6 +1,7 @@
 import React from 'react';
 import '../sass/_navigation.scss';
 import logo from '../assets/shared/logo.svg';
+import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
   return (
@@ -8,24 +9,24 @@ export default function Navigation() {
       <img className="navigation__logo" src={logo} alt="logo" />
       <ul className="navigation__links">
         <li className="navigation__item">
-          <a href="#" className="navigation__link navigation__link--active">
+          <NavLink to="/" className="navigation__link navigation__link--active">
             <span className="navigation__item-number">00</span>Home
-          </a>
+          </NavLink>
         </li>
         <li className="navigation__item">
-          <a href="#" className="navigation__link">
+          <NavLink to="/destination" className="navigation__link">
             <span className="navigation__item-number">01</span>Destination
-          </a>
+          </NavLink>
         </li>
         <li className="navigation__item">
-          <a href="#" className="navigation__link">
+          <NavLink to="/crew" className="navigation__link">
             <span className="navigation__item-number">02</span>Crew
-          </a>
+          </NavLink>
         </li>
         <li className="navigation__item">
-          <a href="#" className="navigation__link">
+          <NavLink to="/technology" className="navigation__link">
             <span className="navigation__item-number">03</span>Technology
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>
