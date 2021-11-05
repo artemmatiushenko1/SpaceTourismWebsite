@@ -16,4 +16,10 @@ html {
 body {
   font-family: $font-secondary, sans-serif;
   font-size: 1.8rem;
+  color: $color-text-primary;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
 }
