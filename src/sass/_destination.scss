@@ -3,6 +3,14 @@
 
 .destination {
   padding: 0 16.5rem;
+  padding-top: 7.5rem;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 8vw;
+    padding-top: 6.4rem;
+  }
 
   &__heading {
     color: $color-text-primary;
@@ -13,5 +21,83 @@
       margin-right: 2.8rem;
       font-weight: 700;
     }
+  }
+
+  &__planet-img {
+    padding-top: 3.3rem;
+    align-self: center;
+    max-width: 35vw;
+    height: auto;
+  }
+
+  &__text-box {
+    max-width: 44.4rem;
+  }
+
+  &__tabs {
+    list-style: none;
+    display: flex;
+    column-gap: 3.5rem;
+    margin-bottom: 3rem;
+  }
+
+  &__tab-btn {
+    background: none;
+    color: inherit;
+    font-family: $font-tertiary;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.6rem;
+    padding-bottom: 1.2rem;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: border-bottom 0.2s ease;
+  }
+
+  &__tab-btn:hover {
+    border-color: rgba($color-text-primary, 0.5);
+  }
+
+  &__tab-btn--active {
+    border-color: rgba($color-text-primary, 1);
+  }
+
+  &__planet-name {
+    text-transform: uppercase;
+  }
+
+  &__planet-description {
+    margin-bottom: 8rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: -6rem;
+      left: 0;
+      background-color: rgba($color-text-primary, 0.3);
+    }
+  }
+
+  &__key-values {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__value-label {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__distance {
+    text-transform: uppercase;
+  }
+
+  &__time {
+    text-transform: uppercase;
   }
 }
