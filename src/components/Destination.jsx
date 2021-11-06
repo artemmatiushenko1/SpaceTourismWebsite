@@ -5,18 +5,11 @@ import destinationData from '../data/data';
 export default function Destination() {
   const { destinations } = destinationData;
   const [currentPlanet, setCurrentPlanet] = useState(destinations[0]);
+  const [selectedTab, setSelectedTab] = useState(0);
 
-  const onTabSelected = ({ target }) => {
-    const tabs = document.querySelectorAll('.destination__tab-btn');
-    tabs.forEach((tab) => {
-      tab.classList.remove('destination__tab-btn--active');
-    });
-    target.classList.add('destination__tab-btn--active');
-    const selectedPlanet = target.dataset['planet'];
-    const planetData = destinations.find((el) => {
-      return el.name === selectedPlanet;
-    });
-    setCurrentPlanet(planetData);
+  const onTabSelected = (tabIndex) => {
+    setCurrentPlanet(destinations[tabIndex]);
+    setSelectedTab(tabIndex);
   };
 
   return (
@@ -32,42 +25,23 @@ export default function Destination() {
         />
         <div className="destination__text-box">
           <ul className="destination__tabs">
-            <li className="destination__tab-item">
-              <button
-                className="destination__tab-btn destination__tab-btn--active"
-                data-planet="Moon"
-                onClick={onTabSelected}
-              >
-                Moon
-              </button>
-            </li>
-            <li className="destination__tab-item">
-              <button
-                className="destination__tab-btn"
-                data-planet="Mars"
-                onClick={onTabSelected}
-              >
-                Mars
-              </button>
-            </li>
-            <li className="destination__tab-item">
-              <button
-                className="destination__tab-btn"
-                data-planet="Europa"
-                onClick={onTabSelected}
-              >
-                Europa
-              </button>
-            </li>
-            <li className="destination__tab-item">
-              <button
-                className="destination__tab-btn"
-                data-planet="Titan"
-                onClick={onTabSelected}
-              >
-                Titan
-              </button>
-            </li>
+            {destinations.map((destination, i) => {
+              return (
+                <li key={i} className="destination__tab-item">
+                  <button
+                    className={`destination__tab-btn ${
+                      selectedTab === i ? 'destination__tab-btn--active' : ''
+                    }`}
+                    data-planet={destination.name}
+                    onClick={(e) => {
+                      onTabSelected(i);
+                    }}
+                  >
+                    {destination.name}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
           <h2 className="destination__planet-name heading--secondary">
             {currentPlanet.name}

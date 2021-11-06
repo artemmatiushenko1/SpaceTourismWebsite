@@ -2,19 +2,18 @@ import './App.scss';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Destination from './components/Destination';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 function App() {
+  const location = useLocation().pathname.replace('/', '');
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/destination" element={<Destination />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div className={`App ${location === '' ? 'home' : location}-bc`}>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/destination" element={<Destination />} />
+      </Routes>
+    </div>
   );
 }
 

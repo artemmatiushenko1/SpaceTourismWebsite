@@ -1,5 +1,6 @@
 @import './variables';
 @import './typography';
+@import './animations';
 
 .home {
   display: grid;
@@ -7,6 +8,11 @@
   column-gap: 10vw;
   padding: 0 16.5rem;
   padding-top: 25rem;
+
+  transition: all 0.2s ease;
+  animation: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.495, 0.165, 0, 0.95);
 
   &__subheading {
     line-height: 3.2rem;

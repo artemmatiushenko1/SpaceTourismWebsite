@@ -9,7 +9,7 @@
 
   &__links {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, min-content);
     column-gap: 4.8rem;
     justify-items: center;
     list-style: none;
@@ -17,6 +17,17 @@
     font-weight: 400;
     backdrop-filter: blur(8rem);
     padding: 3.8rem 16rem 0 12rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 95%;
+      height: 1px;
+      width: 25vw;
+      background-color: rgba($color-text-primary, 0.3);
+    }
   }
 
   &__item {
@@ -33,19 +44,29 @@
   &__link:link,
   &__link:visited {
     display: inline-block;
-    padding-bottom: 3.5rem;
     color: inherit;
     text-decoration: none;
-    border-bottom: 3px solid transparent;
-    transition: border-bottom 0.2s ease;
+    padding-bottom: 3.8rem;
+    position: relative;
   }
 
-  &__link:hover,
-  &__link:active {
-    border-color: rgba($color-text-primary, 0.5);
+  &__link:hover::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    background-color: rgba($color-text-primary, 0.5);
+    animation: growRight 0.5s cubic-bezier(0.495, 0.165, 0, 0.95);
   }
 
-  &__item a.active {
-    border-color: $color-text-primary;
+  &__item a.active::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    background-color: rgba($color-text-primary, 1);
+    animation: growRight 0.5s cubic-bezier(0.495, 0.165, 0, 0.95);
   }
 }

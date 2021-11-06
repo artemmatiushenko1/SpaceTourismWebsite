@@ -1,0 +1,23 @@
+@import './variables';
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(100%) scale(0.05);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes growRight {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
