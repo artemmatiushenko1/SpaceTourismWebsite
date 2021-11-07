@@ -3,21 +3,30 @@
 @import './animations';
 
 .crew {
-  padding: 0 16.5rem;
-  padding-top: 7.5rem;
+  padding: 0 14rem 0 16.5rem;
   animation: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.495, 0.165, 0, 0.95);
+  height: 84%;
 
   &__content {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 7vw;
+    height: 100%;
+    display: grid;
+    align-items: end;
+    column-gap: 5rem;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  }
+
+  &__text-box {
+    padding-top: 7.5rem;
+    align-self: start;
+    padding-bottom: 5rem;
   }
 
   &__heading {
     color: $color-text-primary;
     text-transform: uppercase;
+    margin-bottom: 3rem;
 
     span {
       color: rgba($color-text-primary, 0.25);
@@ -29,7 +38,7 @@
   &__position-name {
     text-transform: uppercase;
     opacity: 0.5;
-    margin-top: 15rem;
+    margin-top: 12rem;
     margin-bottom: 1.5rem;
   }
 
@@ -39,12 +48,14 @@
   }
 
   &__member-photo {
-    align-self: flex-end;
-    max-width: 35vw;
+    padding-top: 2.5rem;
+    align-self: end;
+    width: auto;
+    height: 90%;
   }
 
   &__member-description {
-    margin-bottom: 12rem;
+    margin-bottom: 10rem;
   }
 
   &__dots-component {
