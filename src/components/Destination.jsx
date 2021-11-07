@@ -4,11 +4,11 @@ import destinationData from '../data/data';
 
 export default function Destination() {
   const { destinations } = destinationData;
-  const [currentPlanet, setCurrentPlanet] = useState(destinations[0]);
+  const [planetData, setPlanetData] = useState(destinations[0]);
   const [selectedTab, setSelectedTab] = useState(0);
 
   const onTabSelected = (tabIndex) => {
-    setCurrentPlanet(destinations[tabIndex]);
+    setPlanetData(destinations[tabIndex]);
     setSelectedTab(tabIndex);
   };
 
@@ -19,7 +19,7 @@ export default function Destination() {
       </h5>
       <div className="destination__content">
         <img
-          src={currentPlanet.images.png}
+          src={planetData.images.png}
           alt="planet"
           className="destination__planet-img"
         />
@@ -44,10 +44,10 @@ export default function Destination() {
             })}
           </ul>
           <h2 className="destination__planet-name heading--secondary">
-            {currentPlanet.name}
+            {planetData.name}
           </h2>
           <p className="destination__planet-description body-text">
-            {currentPlanet.description}
+            {planetData.description}
           </p>
           <div className="destination__key-values">
             <div className="destination__key-value">
@@ -61,7 +61,7 @@ export default function Destination() {
                 id="destination__distance"
                 className="destination__distance sub-heading--primary"
               >
-                {currentPlanet.distance}
+                {planetData.distance}
               </h6>
             </div>
             <div className="destination__key-value">
@@ -75,7 +75,7 @@ export default function Destination() {
                 id="destination__time"
                 className="destination__time sub-heading--primary"
               >
-                {currentPlanet.travel}
+                {planetData.travel}
               </h6>
             </div>
           </div>

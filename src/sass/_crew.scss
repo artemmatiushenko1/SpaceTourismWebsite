@@ -1,0 +1,72 @@
+@import './variables';
+@import './typography';
+@import './animations';
+
+.crew {
+  padding: 0 16.5rem;
+  padding-top: 7.5rem;
+  animation: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.495, 0.165, 0, 0.95);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 7vw;
+  }
+
+  &__heading {
+    color: $color-text-primary;
+    text-transform: uppercase;
+
+    span {
+      color: rgba($color-text-primary, 0.25);
+      margin-right: 2.8rem;
+      font-weight: 700;
+    }
+  }
+
+  &__position-name {
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 15rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__member-name {
+    text-transform: uppercase;
+    margin-bottom: 2.7rem;
+  }
+
+  &__member-photo {
+    align-self: flex-end;
+    max-width: 35vw;
+  }
+
+  &__member-description {
+    margin-bottom: 12rem;
+  }
+
+  &__dots-component {
+    list-style: none;
+    display: flex;
+    column-gap: 2.4rem;
+  }
+
+  &__dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgba($color-text-primary, 0.17);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  &__dot:hover {
+    background-color: rgba($color-text-primary, 0.6);
+  }
+
+  &__dot--active {
+    background-color: rgba($color-text-primary, 1);
+  }
+}
