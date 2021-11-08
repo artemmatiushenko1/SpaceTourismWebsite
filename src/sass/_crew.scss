@@ -3,30 +3,24 @@
 @import './animations';
 
 .crew {
-  padding: 0 14rem 0 16.5rem;
-  animation: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: cubic-bezier(0.495, 0.165, 0, 0.95);
   height: 84%;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  padding-top: 7.5rem;
+  padding-right: 10rem;
+  animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
 
-  &__content {
-    height: 100%;
-    display: grid;
-    align-items: end;
-    column-gap: 5rem;
-    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  &__member-photo {
+    align-self: end;
   }
 
   &__text-box {
-    padding-top: 7.5rem;
-    align-self: start;
-    padding-bottom: 5rem;
+    max-width: 80%;
   }
 
   &__heading {
     color: $color-text-primary;
-    text-transform: uppercase;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 
     span {
       color: rgba($color-text-primary, 0.25);
@@ -36,32 +30,19 @@
   }
 
   &__position-name {
-    text-transform: uppercase;
     opacity: 0.5;
-    margin-top: 12rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   &__member-name {
-    text-transform: uppercase;
-    margin-bottom: 2.7rem;
-  }
-
-  &__member-photo {
-    padding-top: 2.5rem;
-    align-self: end;
-    width: auto;
-    height: 90%;
-  }
-
-  &__member-description {
-    margin-bottom: 10rem;
+    margin-bottom: 2.5rem;
   }
 
   &__dots-component {
     list-style: none;
     display: flex;
     column-gap: 2.4rem;
+    margin-bottom: 15rem;
   }
 
   &__dot {

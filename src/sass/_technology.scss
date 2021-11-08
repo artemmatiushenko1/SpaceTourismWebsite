@@ -8,16 +8,12 @@
   column-gap: 8rem;
   row-gap: 2.6rem;
   padding-top: 7.5rem;
-  padding-left: 16.5rem;
   padding-bottom: 3.5rem;
-  animation: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: cubic-bezier(0.495, 0.165, 0, 0.95);
+  animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
 
   &__heading {
     grid-column: 1 / -1;
     color: $color-text-primary;
-    text-transform: uppercase;
     margin-bottom: 3rem;
 
     span {

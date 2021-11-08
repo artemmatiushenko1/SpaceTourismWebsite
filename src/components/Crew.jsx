@@ -14,42 +14,40 @@ export default function Crew() {
 
   return (
     <section className="crew">
-      <div className="crew__content">
-        <div className="crew__text-box">
-          <h5 className="crew__heading heading--fifth">
-            <span>02</span>Meet your crew
-          </h5>
-          <ul className="crew__dots-component">
-            {crew.map((_, i) => {
-              return (
-                <li
-                  key={i}
-                  className={`crew__dot ${
-                    slideIndex === i ? 'crew__dot--active' : ''
-                  }`}
-                  onClick={() => {
-                    onDotSelected(i);
-                  }}
-                >
-                  &nbsp;
-                </li>
-              );
-            })}
-          </ul>
-          <h4 className="crew__position-name heading--fourth">
-            {memberData.role}
-          </h4>
-          <h3 className="crew__member-name heading--tertiary">
-            {memberData.name}
-          </h3>
-          <p className="crew__member-description body-text">{memberData.bio}</p>
-        </div>
-        <img
-          src={memberData.images.png}
-          alt="crewMember"
-          className="crew__member-photo"
-        />
+      <div className="crew__text-box">
+        <h5 className="crew__heading heading--fifth">
+          <span>02</span>Meet your crew
+        </h5>
+        <ul className="crew__dots-component">
+          {crew.map((_, i) => {
+            return (
+              <li
+                key={i}
+                className={`crew__dot ${
+                  slideIndex === i ? 'crew__dot--active' : ''
+                }`}
+                onClick={() => {
+                  onDotSelected(i);
+                }}
+              >
+                &nbsp;
+              </li>
+            );
+          })}
+        </ul>
+        <h4 className="crew__position-name heading--fourth">
+          {memberData.role}
+        </h4>
+        <h3 className="crew__member-name heading--tertiary">
+          {memberData.name}
+        </h3>
+        <p className="crew__member-description body-text">{memberData.bio}</p>
       </div>
+      <img
+        src={memberData.images.png}
+        alt="crewMember"
+        className="crew__member-photo"
+      />
     </section>
   );
 }

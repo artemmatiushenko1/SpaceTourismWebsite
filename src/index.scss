@@ -23,7 +23,16 @@ body {
   background-color: $color-text-secondary;
   color: #333;
 }
-#root {
-  width: 100vw;
-  height: 100vh;
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-text-primary;
+  border-radius: 50%;
+}
+
+section {
+  padding-left: 16.5rem;
 }

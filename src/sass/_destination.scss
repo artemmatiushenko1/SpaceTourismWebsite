@@ -3,12 +3,10 @@
 @import './animations';
 
 .destination {
-  padding: 0 16.5rem;
+  padding-right: 16.5rem;
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
-  animation: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: cubic-bezier(0.495, 0.165, 0, 0.95);
+  animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
 
   &__content {
     display: flex;
@@ -19,7 +17,6 @@
 
   &__heading {
     color: $color-text-primary;
-    text-transform: uppercase;
 
     span {
       color: rgba($color-text-primary, 0.25);
@@ -69,10 +66,6 @@
     border-color: rgba($color-text-primary, 1);
   }
 
-  &__planet-name {
-    text-transform: uppercase;
-  }
-
   &__planet-description {
     margin-bottom: 8rem;
     position: relative;
@@ -95,15 +88,6 @@
 
   &__value-label {
     display: inline-block;
-    text-transform: uppercase;
     margin-bottom: 1rem;
-  }
-
-  &__distance {
-    text-transform: uppercase;
-  }
-
-  &__time {
-    text-transform: uppercase;
   }
 }
