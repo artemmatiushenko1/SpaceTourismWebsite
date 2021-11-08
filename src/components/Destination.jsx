@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../sass/_destination.scss';
-import destinationData from '../data/data';
+import data from '../data/data';
 
 export default function Destination() {
-  const { destinations } = destinationData;
+  const { destinations } = data;
   const [planetData, setPlanetData] = useState(destinations[0]);
   const [selectedTab, setSelectedTab] = useState(0);
 

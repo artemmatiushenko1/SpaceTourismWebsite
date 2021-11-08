@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../sass/_crew.scss';
-import crewData from '../data/data';
+import data from '../data/data';
 
 export default function Crew() {
-  const { crew } = crewData;
+  const { crew } = data;
   const [memberData, setMemberData] = useState(crew[0]);
   const [slideIndex, setSlideIndex] = useState(0);
 

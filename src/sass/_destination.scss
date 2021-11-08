@@ -59,10 +59,10 @@
     border-bottom: 3px solid transparent;
     cursor: pointer;
     transition: border-bottom 0.2s ease;
-  }
 
-  &__tab-btn:hover {
-    border-color: rgba($color-text-primary, 0.5);
+    &:not(.destination__tab-btn--active):hover {
+      border-color: rgba($color-text-primary, 0.5);
+    }
   }
 
   &__tab-btn--active {
