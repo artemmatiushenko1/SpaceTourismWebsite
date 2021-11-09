@@ -6,11 +6,27 @@
   display: grid;
   grid-template-columns: min-content 1fr;
   column-gap: 10vw;
-  padding-right: 16.5rem;
+  align-items: center;
+  padding: 0 16.5rem;
   padding-top: 25rem;
   padding-bottom: 7.5rem;
   transition: all 0.2s ease;
   animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
+
+  @media only screen and (max-width: 68.75em) {
+    grid-template-columns: 1fr;
+    align-items: center;
+    row-gap: 15.6rem;
+    padding-top: 10rem;
+  }
+
+  &__text-box {
+    @media only screen and (max-width: 68.75em) {
+      text-align: center;
+      max-width: 50rem;
+      justify-self: center;
+    }
+  }
 
   &__subheading {
     line-height: 3.2rem;
@@ -27,14 +43,14 @@
   }
 
   &__btn-explore {
-    align-self: center;
-    justify-self: center;
+    justify-self: end;
+    @media only screen and (max-width: 68.75em) {
+      justify-self: center;
+    }
   }
 
   &__btn-explore:link,
   &__btn-explore:visited {
-    align-self: end;
-    justify-self: end;
     text-decoration: none;
     color: #0b0d17;
     text-transform: uppercase;

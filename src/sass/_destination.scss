@@ -3,16 +3,26 @@
 @import './animations';
 
 .destination {
-  padding-right: 16.5rem;
+  padding: 0 16.5rem;
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
   animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
+
+  @media only screen and (max-width: 68.75em) {
+    padding: 7.5rem 16.5rem;
+  }
 
   &__content {
     display: flex;
     justify-content: space-between;
     column-gap: 8vw;
     padding-top: 6.4rem;
+
+    @media only screen and (max-width: 68.75em) {
+      flex-direction: column;
+      row-gap: 8vw;
+      align-items: center;
+    }
   }
 
   &__heading {
@@ -34,6 +44,10 @@
 
   &__text-box {
     max-width: 44.4rem;
+    @media only screen and (max-width: 68.75em) {
+      max-width: 100%;
+      text-align: center;
+    }
   }
 
   &__tabs {
@@ -41,6 +55,10 @@
     display: flex;
     column-gap: 3.5rem;
     margin-bottom: 3rem;
+
+    @media only screen and (max-width: 68.75em) {
+      justify-content: center;
+    }
   }
 
   &__tab-btn {

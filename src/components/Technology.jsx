@@ -43,11 +43,18 @@ export default function Technology() {
           {technologyData.description}
         </p>
       </div>
-      <img
-        src={technologyData.images.portrait}
-        alt="term"
-        className="technology__term-photo"
-      />
+      <picture className="technology__term-photo">
+        <source
+          className="technology__term-photo"
+          srcset={technologyData.images.portrait}
+          media="(min-width: 68.75em)"
+        />
+        <img
+          className="technology__term-photo"
+          src={technologyData.images.landscape}
+          alt="term"
+        />
+      </picture>
     </section>
   );
 }
