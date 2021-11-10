@@ -3,32 +3,37 @@
 @import './animations';
 
 .crew {
-  height: 84%;
+  height: 90vh;
   display: grid;
-  grid-template-columns: 1fr min-content;
-  padding-left: 16.5rem;
-  padding-top: 7.5rem;
-  padding-right: 10rem;
+  grid-template-columns: 1fr 0.9fr;
+  padding: 7.5rem 10rem 0 16.5rem;
   // animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
 
-  @media only screen and (max-width: 68.75em) {
+  @media only screen and (max-width: $bp-tablet) {
     grid-template-columns: 1fr;
     justify-items: center;
     row-gap: 4rem;
     height: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 7.5rem 4rem 0 4rem;
   }
 
   &__member-photo {
     align-self: end;
+    max-width: 100%;
+  }
+
+  &__text-content {
+    @media only screen and (max-width: $bp-tablet) {
+      text-align: center;
+    }
   }
 
   &__text-box {
     max-width: 80%;
 
-    @media only screen and (max-width: 68.75em) {
+    @media only screen and (max-width: $bp-tablet) {
       text-align: center;
+      margin: 0 auto;
     }
   }
 
@@ -36,7 +41,7 @@
     color: $color-text-primary;
     margin-bottom: 2rem;
 
-    @media only screen and (max-width: 68.75em) {
+    @media only screen and (max-width: $bp-tablet) {
       text-align: start;
       margin-bottom: 5rem;
     }
@@ -63,7 +68,7 @@
     column-gap: 2.4rem;
     margin-bottom: 15rem;
 
-    @media only screen and (max-width: 68.75em) {
+    @media only screen and (max-width: $bp-tablet) {
       justify-content: center;
       margin-bottom: 5rem;
     }

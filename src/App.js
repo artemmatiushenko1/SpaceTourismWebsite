@@ -13,6 +13,9 @@ import Technology from './components/Technology';
 import { AnimatePresence } from 'framer-motion';
 
 function App() {
+  const location = useLocation();
+  const locationPathname = location.pathname.replace('/', '');
+
   useEffect(() => {
     const bcImages = [homeBc, destinationBc, crewBc, techBc];
     bcImages.forEach((picture) => {
@@ -21,14 +24,15 @@ function App() {
     });
   }, []);
 
-  const location = useLocation().pathname.replace('/', '');
-  const loc = useLocation();
-
   return (
-    <div className={`App ${location === '' ? 'home' : location}-bc`}>
+    <div
+      className={`App ${
+        locationPathname === '' ? 'home' : locationPathname
+      }-bc`}
+    >
       <Navigation />
       <AnimatePresence exitBeforeEnter initial={false}>
-        <Routes location={loc} key={loc.pathname}>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/destination" element={<Destination />} />
           <Route path="/crew" element={<Crew />} />

@@ -21,6 +21,7 @@ body {
   font-family: $font-secondary, sans-serif;
   font-size: 1.8rem;
   color: $color-text-primary;
+  background-color: #0b0d17;
 }
 
 ::selection {
@@ -28,11 +29,11 @@ body {
   color: #333;
 }
 
-// ::-webkit-scrollbar {
-//   width: 2px;
-// }
+::-webkit-scrollbar {
+  width: 2px;
+}
 
-// ::-webkit-scrollbar-thumb {
-//   background: $color-text-primary;
-//   border-radius: 50%;
-// }
+::-webkit-scrollbar-thumb {
+  background: $color-text-primary;
+  border-radius: 50%;
+}

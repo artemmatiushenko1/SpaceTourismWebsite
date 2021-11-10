@@ -3,12 +3,9 @@
 @import './animations';
 
 .destination {
-  padding: 0 16.5rem;
-  padding-top: 7.5rem;
-  padding-bottom: 7.5rem;
+  padding: 7.5rem 16.5rem;
   // animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
-
-  @media only screen and (max-width: 68.75em) {
+  @media only screen and (max-width: $bp-tablet) {
     padding: 7.5rem 4rem;
   }
 
@@ -18,12 +15,11 @@
     column-gap: 8vw;
     padding-top: 6.4rem;
 
-    @media only screen and (max-width: 68.75em) {
+    @media only screen and (max-width: $bp-tablet) {
       flex-direction: column;
       row-gap: 8vw;
       align-items: center;
-      padding-right: 5rem;
-      padding-left: 5rem;
+      padding: 6.4rem 5rem 0 5rem;
     }
   }
 
@@ -46,7 +42,7 @@
 
   &__text-box {
     max-width: 44.4rem;
-    @media only screen and (max-width: 68.75em) {
+    @media only screen and (max-width: $bp-tablet) {
       max-width: 100%;
       text-align: center;
     }
@@ -58,7 +54,7 @@
     column-gap: 3.5rem;
     margin-bottom: 3rem;
 
-    @media only screen and (max-width: 68.75em) {
+    @media only screen and (max-width: $bp-tablet) {
       justify-content: center;
     }
   }
