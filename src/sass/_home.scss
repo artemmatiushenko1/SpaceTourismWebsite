@@ -11,12 +11,13 @@
   padding-top: 25rem;
   padding-bottom: 7.5rem;
   transition: all 0.2s ease;
-  animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
+  // animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
 
   @media only screen and (max-width: 68.75em) {
     grid-template-columns: 1fr;
     align-items: center;
     row-gap: 15.6rem;
+    padding: 0;
     padding-top: 10rem;
   }
 
@@ -63,6 +64,11 @@
     align-items: center;
     justify-content: center;
     position: relative;
+
+    @media only screen and (max-width: 68.75em) {
+      width: 24rem;
+      height: 24rem;
+    }
   }
 
   &__btn-explore::before {

@@ -7,6 +7,18 @@
   padding-left: 5.5rem;
   padding-top: 4rem;
 
+  @media only screen and (max-width: 68.75em) {
+    padding-top: 0;
+    grid-template-columns: min-content 1fr;
+    column-gap: 20%;
+    padding-left: 4rem;
+  }
+
+  &__logo {
+    @media only screen and (max-width: 68.75em) {
+    }
+  }
+
   &__links {
     display: grid;
     grid-template-columns: repeat(4, min-content);
@@ -19,6 +31,14 @@
     padding: 3.8rem 16rem 0 12rem;
     position: relative;
 
+    @media only screen and (max-width: 68.75em) {
+      padding: 0;
+      padding-top: 3.8rem;
+      column-gap: 0;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -27,6 +47,10 @@
       height: 1px;
       width: 25vw;
       background-color: rgba($color-text-primary, 0.3);
+
+      @media only screen and (max-width: 68.75em) {
+        display: none;
+      }
     }
   }
 
@@ -38,6 +62,10 @@
     &-number {
       font-weight: 700;
       margin-right: 1rem;
+
+      @media only screen and (max-width: 68.75em) {
+        display: none;
+      }
     }
   }
 

@@ -28,18 +28,11 @@ body {
   color: #333;
 }
 
-::-webkit-scrollbar {
-  width: 2px;
-}
+// ::-webkit-scrollbar {
+//   width: 2px;
+// }
 
-::-webkit-scrollbar-thumb {
-  background: $color-text-primary;
-  border-radius: 50%;
-}
-
-// section {
-
-//   @media only screen and (max-width: 68.75em) {
-//     padding-left: 10rem;
-//   }
+// ::-webkit-scrollbar-thumb {
+//   background: $color-text-primary;
+//   border-radius: 50%;
 // }

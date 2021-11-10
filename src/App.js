@@ -10,6 +10,7 @@ import destinationBc from './assets/destination/background-destination-desktop.j
 import crewBc from './assets/crew/background-crew-desktop.jpg';
 import techBc from './assets/technology/background-technology-desktop.jpg';
 import Technology from './components/Technology';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
   useEffect(() => {
@@ -21,15 +22,19 @@ function App() {
   }, []);
 
   const location = useLocation().pathname.replace('/', '');
+  const loc = useLocation();
+
   return (
     <div className={`App ${location === '' ? 'home' : location}-bc`}>
       <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/destination" element={<Destination />} />
-        <Route path="/crew" element={<Crew />} />
-        <Route path="/technology" element={<Technology />} />
-      </Routes>
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <Routes location={loc} key={loc.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/destination" element={<Destination />} />
+          <Route path="/crew" element={<Crew />} />
+          <Route path="/technology" element={<Technology />} />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }

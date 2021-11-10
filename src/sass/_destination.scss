@@ -6,10 +6,10 @@
   padding: 0 16.5rem;
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
-  animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
+  // animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
 
   @media only screen and (max-width: 68.75em) {
-    padding: 7.5rem 16.5rem;
+    padding: 7.5rem 4rem;
   }
 
   &__content {
@@ -22,6 +22,8 @@
       flex-direction: column;
       row-gap: 8vw;
       align-items: center;
+      padding-right: 5rem;
+      padding-left: 5rem;
     }
   }
 
