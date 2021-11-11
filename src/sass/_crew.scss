@@ -7,7 +7,6 @@
   display: grid;
   grid-template-columns: 1fr 0.9fr;
   padding: 7.5rem 10rem 0 16.5rem;
-  // animation: moveInLeft 1s cubic-bezier(0.495, 0.165, 0, 0.95);
 
   @media only screen and (max-width: $bp-tablet) {
     grid-template-columns: 1fr;
