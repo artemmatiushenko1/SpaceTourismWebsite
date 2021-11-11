@@ -21,3 +21,13 @@
     width: 100%;
   }
 }
+
+@keyframes growUp {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}

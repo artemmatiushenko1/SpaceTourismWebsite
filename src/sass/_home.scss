@@ -18,6 +18,11 @@
     padding: 10rem 4rem 0 4rem;
   }
 
+  @media only screen and (max-width: $bp-phone) {
+    row-gap: 8rem;
+    padding-top: 6rem;
+  }
+
   &__text-box {
     @media only screen and (max-width: $bp-tablet) {
       text-align: center;
@@ -29,11 +34,19 @@
   &__subheading {
     line-height: 3.2rem;
     margin-bottom: 2.4rem;
+
+    @media only screen and (max-width: $bp-phone) {
+      margin-bottom: 1.6rem;
+    }
   }
 
   &__heading {
     line-height: 17rem;
     color: #d0d6f9;
+
+    @media only screen and (max-width: $bp-phone) {
+      line-height: 10rem;
+    }
   }
 
   &__paragraph {
@@ -70,6 +83,12 @@
     @media only screen and (max-width: $bp-tablet) {
       width: 24rem;
       height: 24rem;
+    }
+
+    @media only screen and (max-width: $bp-phone) {
+      width: 15rem;
+      height: 15rem;
+      font-size: 2rem;
     }
   }
 

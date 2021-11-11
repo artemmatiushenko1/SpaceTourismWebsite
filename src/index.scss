@@ -4,7 +4,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 
-  @media only screen and (max-width: 68.75em) {
+  @media only screen and (max-width: $bp-tablet) {
     font-size: 57%;
   }
 }

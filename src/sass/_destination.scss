@@ -9,6 +9,10 @@
     padding: 7.5rem 4rem;
   }
 
+  @media only screen and (max-width: $bp-phone) {
+    padding-top: 3.5rem;
+  }
+
   &__content {
     display: flex;
     justify-content: space-between;
@@ -20,6 +24,10 @@
       row-gap: 8vw;
       align-items: center;
       padding: 6.4rem 5rem 0 5rem;
+    }
+
+    @media only screen and (max-width: $bp-phone) {
+      padding: 0;
     }
   }
 
@@ -57,6 +65,11 @@
     @media only screen and (max-width: $bp-tablet) {
       justify-content: center;
     }
+
+    @media only screen and (max-width: $bp-phone) {
+      column-gap: 0;
+      justify-content: space-around;
+    }
   }
 
   &__tab-btn {
@@ -75,6 +88,10 @@
 
     &:not(.destination__tab-btn--active):hover {
       border-color: rgba($color-text-primary, 0.5);
+    }
+
+    @media only screen and (max-width: $bp-phone) {
+      font-size: 1.4rem;
     }
   }
 
@@ -100,6 +117,11 @@
   &__key-values {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @media only screen and (max-width: $bp-phone) {
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
+    }
   }
 
   &__value-label {
