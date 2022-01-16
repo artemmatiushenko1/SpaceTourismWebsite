@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../sass/_crew.scss';
-import data from '../data/data';
+import data from '../data/data.json';
 import { motion } from 'framer-motion';
 
 export default function Crew() {
@@ -26,6 +26,7 @@ export default function Crew() {
             <span>02</span>Meet your crew
           </h5>
           <div className="crew__text-box">
+            {/* TODO: Create dots components */}
             <ul className="crew__dots-component">
               {crew.map((_, i) => {
                 return (
@@ -55,7 +56,7 @@ export default function Crew() {
           </div>
         </div>
         <img
-          src={memberData.images.png}
+          src={crew[slideIndex].images.png}
           alt="crewMember"
           className="crew__member-photo"
         />

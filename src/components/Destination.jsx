@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../sass/_destination.scss';
-import data from '../data/data';
+import data from '../data/data.json';
 import { motion } from 'framer-motion';
 
 export default function Destination() {
@@ -26,11 +26,12 @@ export default function Destination() {
         </h5>
         <div className="destination__content">
           <img
-            src={planetData.images.png}
+            src={destinations[selectedTab].images.png}
             alt="planet"
             className="destination__planet-img"
           />
           <div className="destination__text-box">
+            {/* TODO: create tabs component */}
             <ul className="destination__tabs">
               {destinations.map((destination, i) => {
                 return (

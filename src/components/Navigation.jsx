@@ -10,6 +10,7 @@ export default function Navigation() {
       <img className="navigation__logo" src={logo} alt="logo" />
       <MobileNavigation />
       <ul className="navigation__links">
+        {/* TODO: Create navigation item component */}
         <li className="navigation__item">
           <NavLink to="/" className="navigation__link" data-location="home">
             <span className="navigation__item-number">00</span>Home

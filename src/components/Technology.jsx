@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../sass/_technology.scss';
-import data from '../data/data';
+import data from '../data/data.json';
 import { motion } from 'framer-motion';
 
 export default function Technology() {
@@ -53,12 +53,12 @@ export default function Technology() {
         <picture className="technology__term-photo">
           <source
             className="technology__term-photo"
-            srcset={technologyData.images.portrait}
+            srcSet={technology[slideIndex].images.portrait}
             media="(min-width: 68.75em)"
           />
           <img
             className="technology__term-photo"
-            src={technologyData.images.landscape}
+            src={technology[slideIndex].images.landscape}
             alt="term"
           />
         </picture>
