@@ -1,0 +1,113 @@
+@import '../../../sass/variables';
+@import '../../../sass/typography';
+@import '../../../sass/animations';
+
+.crew {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  padding: 7.5rem 10rem 0 16.5rem;
+
+  @media only screen and (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 4rem;
+    height: 100vh;
+    padding: 7.5rem 4rem 0 4rem;
+  }
+
+  @media only screen and (max-width: $bp-phone) {
+    padding-top: 3.5rem;
+  }
+
+  &__member-photo {
+    align-self: end;
+    max-width: 100%;
+  }
+
+  &__text-content {
+    @media only screen and (max-width: $bp-tablet) {
+      text-align: center;
+    }
+  }
+
+  &__text-box {
+    max-width: 80%;
+
+    @media only screen and (max-width: $bp-tablet) {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @media only screen and (max-width: $bp-phone) {
+      max-width: 100%;
+    }
+  }
+
+  &__heading {
+    color: $color-text-primary;
+    margin-bottom: 2rem;
+
+    @media only screen and (max-width: $bp-tablet) {
+      text-align: start;
+      margin-bottom: 5rem;
+    }
+
+    @media only screen and (max-width: $bp-phone) {
+      margin-bottom: 3rem;
+    }
+
+    span {
+      color: rgba($color-text-primary, 0.25);
+      margin-right: 2.8rem;
+      font-weight: 700;
+    }
+  }
+
+  &__position-name {
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  &__member-name {
+    margin-bottom: 2.5rem;
+  }
+
+  &__dots-component {
+    list-style: none;
+    display: flex;
+    column-gap: 2.4rem;
+    margin-bottom: 15rem;
+
+    @media only screen and (max-width: $bp-tablet) {
+      justify-content: center;
+      margin-bottom: 5rem;
+    }
+
+    @media only screen and (max-width: $bp-phone) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgba($color-text-primary, 0.17);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    @media only screen and (max-width: $bp-phone) {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &__dot:hover {
+    background-color: rgba($color-text-primary, 0.6);
+  }
+
+  &__dot--active {
+    background-color: rgba($color-text-primary, 1);
+  }
+}

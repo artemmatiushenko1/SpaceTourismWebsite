@@ -2,9 +2,9 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Destination from './components/Destination';
-import Crew from './components/Crew';
+import Crew from './components/pages/crew/Crew';
 import './App.scss';
-import Technology from './components/Technology';
+import Technology from './components/pages/technology/Technology';
 import { AnimatePresence } from 'framer-motion';
 
 function App() {
