@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import './_crew.scss';
 import data from '../../../data/data.json';
 import Tabs from './Tabs';
+import useTabs from '../../../hooks/use-tabs';
 
 export default function Crew() {
   const { crew } = data;
-  const [memberData, setMemberData] = useState(crew[0]);
-
-  const onTabSelectedHandler = (index) => {
-    setMemberData(crew[index]);
-  };
+  const { tabData: memberData, onTabSelectedHandler } = useTabs(crew);
 
   return (
     <section className="crew">
@@ -20,7 +17,7 @@ export default function Crew() {
         <div className="crew__text-box">
           <Tabs
             className="crew__dots-component"
-            data={new Array(4).fill(' ')}
+            data={new Array(crew.length).fill(' ')}
             onTabSelected={onTabSelectedHandler}
             tabClassName="crew__dot"
             activeTabClassName="crew__dot--active"

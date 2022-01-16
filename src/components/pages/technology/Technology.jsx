@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './_technology.scss';
 import data from '../../../data/data.json';
 import Tabs from '../crew/Tabs';
+import useTabs from '../../../hooks/use-tabs';
 
 export default function Technology() {
   const { technology } = data;
-  const [technologyData, setTechnologyData] = useState(technology[0]);
-
-  const onTabSelectedHandler = (index) => {
-    setTechnologyData(technology[index]);
-  };
+  const { tabData: technologyData, onTabSelectedHandler } = useTabs(technology);
 
   return (
     <section className="technology">
