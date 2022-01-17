@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import iconHumburger from '../assets/shared/icon-hamburger.svg';
 import iconClose from '../assets/shared/icon-close.svg';
-import '../sass/_mobile-navigation.scss';
+import '../styles/_mobile-navigation.scss';
 
 export default function MobileNavigation() {
   const [visible, setVisible] = useState(false);
