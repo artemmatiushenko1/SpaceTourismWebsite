@@ -20,7 +20,6 @@ const Crew = () => {
             data={new Array(crew.length).fill(' ')}
             onTabSelected={onTabSelectedHandler}
             tabClassName="crew__dot"
-            activeTabClassName="crew__dot--active"
           />
           <h4 className="crew__position-name heading--fourth">
             {memberData.role}

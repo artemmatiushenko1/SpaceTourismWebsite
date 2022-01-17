@@ -18,7 +18,6 @@ const Technology = () => {
         data={[1, 2, 3]}
         onTabSelected={onTabSelectedHandler}
         tabClassName="technology__dot"
-        activeTabClassName="technology__dot--active"
       />
       <div className="technology__text-box">
         <h4 className="technology__subheading nav-text">THE TERMINOLOGY…</h4>

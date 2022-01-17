@@ -8,13 +8,7 @@ const Tab = ({ onSelect, index, content, className }) => {
   );
 };
 
-const Tabs = ({
-  data,
-  onTabSelected,
-  activeTabClassName,
-  tabClassName,
-  className,
-}) => {
+const Tabs = ({ data, onTabSelected, tabClassName, className }) => {
   const [activeTab, setActiveTab] = useState(0);
   const onTabSelectHandler = (id) => {
     setActiveTab(id);
@@ -28,7 +22,7 @@ const Tabs = ({
           key={i}
           index={i}
           className={`${tabClassName} ${
-            activeTab === i ? activeTabClassName : ''
+            activeTab === i ? tabClassName + '--active' : ''
           }`}
           onSelect={onTabSelectHandler}
           content={el}
