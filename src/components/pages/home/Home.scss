@@ -1,0 +1,110 @@
+@import '../../../sass/variables';
+@import '../../../sass/typography';
+@import '../../../sass/animations';
+
+.home {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 10vw;
+  align-items: center;
+  padding: 25rem 16.5rem 7.5rem 16.5rem;
+  transition: all 0.2s ease;
+
+  @media only screen and (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+    align-items: center;
+    row-gap: 15.6rem;
+    padding: 10rem 4rem 0 4rem;
+  }
+
+  @media only screen and (max-width: $bp-phone) {
+    row-gap: 8rem;
+    padding-top: 6rem;
+  }
+
+  &__text-box {
+    @media only screen and (max-width: $bp-tablet) {
+      text-align: center;
+      max-width: 50rem;
+      justify-self: center;
+    }
+  }
+
+  &__subheading {
+    line-height: 3.2rem;
+    margin-bottom: 2.4rem;
+
+    @media only screen and (max-width: $bp-phone) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__heading {
+    line-height: 17rem;
+    color: #d0d6f9;
+
+    @media only screen and (max-width: $bp-phone) {
+      line-height: 10rem;
+    }
+  }
+
+  &__paragraph {
+    line-height: 3.2rem;
+  }
+
+  &__btn-explore {
+    justify-self: end;
+    @media only screen and (max-width: $bp-tablet) {
+      justify-self: center;
+    }
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__btn-explore:link,
+  &__btn-explore:visited {
+    text-decoration: none;
+    color: #0b0d17;
+    text-transform: uppercase;
+    font-size: 3.2rem;
+    width: 27rem;
+    height: 27rem;
+    background-color: $color-text-primary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @media only screen and (max-width: $bp-tablet) {
+      width: 24rem;
+      height: 24rem;
+    }
+
+    @media only screen and (max-width: $bp-phone) {
+      width: 15rem;
+      height: 15rem;
+      font-size: 2rem;
+    }
+  }
+
+  &__btn-explore::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba($color-text-primary, 0.1);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.2s ease;
+  }
+
+  &__btn-explore:hover::before {
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+}

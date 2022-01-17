@@ -1,10 +1,10 @@
 import React from 'react';
-import './_technology.scss';
+import './Technology.scss';
 import data from '../../../data/data.json';
-import Tabs from '../crew/Tabs';
+import Tabs from '../../tabs/Tabs';
 import useTabs from '../../../hooks/use-tabs';
 
-export default function Technology() {
+const Technology = () => {
   const { technology } = data;
   const { tabData: technologyData, onTabSelectedHandler } = useTabs(technology);
 
@@ -43,4 +43,6 @@ export default function Technology() {
       </picture>
     </section>
   );
-}
+};
+
+export default Technology;

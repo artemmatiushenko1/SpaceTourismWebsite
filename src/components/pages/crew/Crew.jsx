@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './_crew.scss';
+import React from 'react';
+import './Crew.scss';
 import data from '../../../data/data.json';
-import Tabs from './Tabs';
+import Tabs from '../../tabs/Tabs';
 import useTabs from '../../../hooks/use-tabs';
 
-export default function Crew() {
+const Crew = () => {
   const { crew } = data;
   const { tabData: memberData, onTabSelectedHandler } = useTabs(crew);
 
@@ -38,4 +38,6 @@ export default function Crew() {
       />
     </section>
   );
-}
+};
+
+export default Crew;

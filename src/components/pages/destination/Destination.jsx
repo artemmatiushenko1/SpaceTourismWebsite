@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
-import '../sass/_destination.scss';
-import data from '../data/data.json';
+import React from 'react';
+import './Destination.scss';
+import data from '../../../data/data.json';
+import Tabs from '../../tabs/Tabs';
+import useTabs from '../../../hooks/use-tabs';
 
-export default function Destination() {
+const Destination = () => {
   const { destinations } = data;
-  const [planetData, setPlanetData] = useState(destinations[0]);
-  const [selectedTab, setSelectedTab] = useState(0);
-
-  const onTabSelected = (tabIndex) => {
-    setPlanetData(destinations[tabIndex]);
-    setSelectedTab(tabIndex);
-  };
+  const { tabData: planetData, onTabSelectedHandler } = useTabs(destinations);
 
   return (
     <section className="destination">
@@ -19,31 +15,18 @@ export default function Destination() {
       </h5>
       <div className="destination__content">
         <img
-          src={destinations[selectedTab].images.png}
+          src={planetData.images.png}
           alt="planet"
           className="destination__planet-img"
         />
         <div className="destination__text-box">
-          {/* TODO: create tabs component */}
-          <ul className="destination__tabs">
-            {destinations.map((destination, i) => {
-              return (
-                <li key={i} className="destination__tab-item">
-                  <button
-                    className={`destination__tab-btn ${
-                      selectedTab === i ? 'destination__tab-btn--active' : ''
-                    }`}
-                    data-planet={destination.name}
-                    onClick={(e) => {
-                      onTabSelected(i);
-                    }}
-                  >
-                    {destination.name}
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+          <Tabs
+            className="destination__tabs"
+            data={destinations.map((dest) => dest.name)}
+            onTabSelected={onTabSelectedHandler}
+            tabClassName="destination__tab-btn"
+            activeTabClassName="destination__tab-btn--active"
+          />
           <h2 className="destination__planet-name heading--secondary">
             {planetData.name}
           </h2>
@@ -84,4 +67,6 @@ export default function Destination() {
       </div>
     </section>
   );
-}
+};
+
+export default Destination;
