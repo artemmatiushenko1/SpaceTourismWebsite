@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div
-      className={`App ${
+      className={`app ${
         locationPathname === '' ? 'home' : locationPathname
       }-bc`}
     >
