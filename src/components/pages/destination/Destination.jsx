@@ -1,8 +1,8 @@
 import React from 'react';
 import './Destination.scss';
 import data from '../../../data/data.json';
-import Tabs from '../../tabs/Tabs';
 import useTabs from '../../../hooks/use-tabs';
+import { Tabs } from '../../common';
 
 const Destination = () => {
   const { destinations } = data;

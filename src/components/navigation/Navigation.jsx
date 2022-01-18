@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/shared/logo.svg';
 import ROUTES from '../../constants/routes';
 import './Navigation.scss';
-import Hamburger from './Hamburger';
+import { Hamburger } from '../common';
 
 const NavigationItem = ({ children, to, onClick }) => {
   return (

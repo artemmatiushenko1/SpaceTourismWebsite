@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hamburger.scss';
-import iconClose from '../../assets/shared/icon-close.svg';
-import iconHumburger from '../../assets/shared/icon-hamburger.svg';
+import iconClose from '../../../assets/shared/icon-close.svg';
+import iconHumburger from '../../../assets/shared/icon-hamburger.svg';
 
 const Hamburger = ({ visible, onClick }) => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Crew.scss';
 import data from '../../../data/data.json';
-import Tabs from '../../tabs/Tabs';
 import useTabs from '../../../hooks/use-tabs';
+import { Tabs } from '../../common';
 
 const Crew = () => {
   const { crew } = data;

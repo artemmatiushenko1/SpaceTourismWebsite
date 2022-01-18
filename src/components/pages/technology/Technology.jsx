@@ -1,8 +1,8 @@
 import React from 'react';
 import './Technology.scss';
 import data from '../../../data/data.json';
-import Tabs from '../../tabs/Tabs';
 import useTabs from '../../../hooks/use-tabs';
+import { Tabs } from '../../common';
 
 const Technology = () => {
   const { technology } = data;
