@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Tab = ({ onSelect, index, content, className }) => {
+const Tab = ({ onSelect, content, className }) => {
   return (
-    <li className={className} onClick={onSelect.bind(null, index)}>
+    <li className={className} onClick={onSelect}>
       {content}
     </li>
   );
 };
 
-const Tabs = ({ data, onTabSelected, tabClassName, className }) => {
-  const [activeTab, setActiveTab] = useState(0);
-  const onTabSelectHandler = (id) => {
-    setActiveTab(id);
-    onTabSelected(id);
-  };
-
+const Tabs = ({ data, onTabSelected, tabClassName, className, value }) => {
   return (
     <ul className={className}>
       {data.map((el, i) => (
@@ -22,9 +16,9 @@ const Tabs = ({ data, onTabSelected, tabClassName, className }) => {
           key={i}
           index={i}
           className={`${tabClassName} ${
-            activeTab === i ? tabClassName + '--active' : ''
+            value === i ? tabClassName + '--active' : ''
           }`}
-          onSelect={onTabSelectHandler}
+          onSelect={onTabSelected.bind(null, i)}
           content={el}
         />
       ))}
