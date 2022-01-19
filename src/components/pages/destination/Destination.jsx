@@ -6,7 +6,7 @@ import { Tabs } from 'components/common';
 
 const Destination = () => {
   const { destinations } = data;
-  const { tabIndex, onTabSelectedHandler } = useTabs(destinations);
+  const { tabIndex, onTabSelectedHandler } = useTabs(destinations, 0);
 
   return (
     <section className="destination">

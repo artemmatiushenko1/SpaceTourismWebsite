@@ -6,7 +6,7 @@ import { Tabs } from 'components/common';
 
 const Crew = () => {
   const { crew } = data;
-  const { tabIndex, onTabSelectedHandler } = useTabs(crew);
+  const { tabIndex, onTabSelectedHandler } = useTabs(crew, 0);
 
   return (
     <section className="crew">

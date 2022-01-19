@@ -1,8 +1,11 @@
 import { useEffect, useReducer } from 'react';
 import tabsReducer from 'reducers/tabs-reducer';
 
-const useTabs = (data) => {
-  const initialTabsState = { activeTabIndex: 0, maxTabIndex: data.length - 1 };
+const useTabs = (data, defaultTabIndex) => {
+  const initialTabsState = {
+    activeTabIndex: defaultTabIndex,
+    maxTabIndex: data.length - 1,
+  };
   const [state, dispatch] = useReducer(tabsReducer, initialTabsState);
 
   const onTabSelectedHandler = (index) => {
