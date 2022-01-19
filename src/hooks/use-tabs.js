@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from 'react';
-import tabsReducer from '../reducers/tabs-reducer';
+import tabsReducer from 'reducers/tabs-reducer';
 
 const useTabs = (data) => {
   const initialTabsState = { activeTabIndex: 0, maxTabIndex: data.length - 1 };

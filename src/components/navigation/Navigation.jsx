@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/shared/logo.svg';
-import ROUTES from '../../constants/routes';
+import logo from 'assets/shared/logo.svg';
+import ROUTES from 'constants/routes';
 import './Navigation.scss';
-import { Hamburger } from '../common';
+import { Hamburger } from 'components/common';
 
 const NavigationItem = ({ children, to, onClick }) => {
   return (
