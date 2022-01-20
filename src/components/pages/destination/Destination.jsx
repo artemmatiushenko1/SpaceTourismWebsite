@@ -6,7 +6,7 @@ import { Tabs } from 'components/common';
 
 const Destination = () => {
   const { destinations } = data;
-  const { tabIndex, onTabSelectedHandler } = useTabs(destinations, 0);
+  const { activeTab, onTabChangeHandler } = useTabs(0);
 
   return (
     <section className="destination">
@@ -15,23 +15,23 @@ const Destination = () => {
       </h5>
       <div className="destination__content">
         <img
-          src={destinations[tabIndex].images.png}
+          src={destinations[activeTab].images.png}
           alt="planet"
           className="destination__planet-img"
         />
         <div className="destination__text-box">
           <Tabs
             className="destination__tabs"
-            value={tabIndex}
+            value={activeTab}
             data={destinations.map((dest) => dest.name)}
-            onTabSelected={onTabSelectedHandler}
+            onChange={onTabChangeHandler}
             tabClassName="destination__tab-btn"
           />
           <h2 className="destination__planet-name heading--secondary">
-            {destinations[tabIndex].name}
+            {destinations[activeTab].name}
           </h2>
           <p className="destination__planet-description body-text">
-            {destinations[tabIndex].description}
+            {destinations[activeTab].description}
           </p>
           <div className="destination__key-values">
             <div className="destination__key-value">
@@ -45,7 +45,7 @@ const Destination = () => {
                 id="destination__distance"
                 className="destination__distance sub-heading--primary"
               >
-                {destinations[tabIndex].distance}
+                {destinations[activeTab].distance}
               </h6>
             </div>
             <div className="destination__key-value">
@@ -59,7 +59,7 @@ const Destination = () => {
                 id="destination__time"
                 className="destination__time sub-heading--primary"
               >
-                {destinations[tabIndex].travel}
+                {destinations[activeTab].travel}
               </h6>
             </div>
           </div>

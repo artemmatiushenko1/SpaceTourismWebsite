@@ -6,7 +6,7 @@ import { Tabs } from 'components/common';
 
 const Technology = () => {
   const { technology } = data;
-  const { tabIndex, onTabSelectedHandler } = useTabs(technology, 0);
+  const { activeTab, onTabChangeHandler } = useTabs(0);
 
   return (
     <section className="technology">
@@ -15,29 +15,29 @@ const Technology = () => {
       </h5>
       <Tabs
         className="technology__dots-component"
-        value={tabIndex}
+        value={activeTab}
         data={[1, 2, 3]}
-        onTabSelected={onTabSelectedHandler}
+        onChange={onTabChangeHandler}
         tabClassName="technology__dot"
       />
       <div className="technology__text-box">
         <h4 className="technology__subheading nav-text">THE TERMINOLOGY…</h4>
         <h3 className="technology__term-name heading--tertiary">
-          {technology[tabIndex].name}
+          {technology[activeTab].name}
         </h3>
         <p className="technology__term-description body-text">
-          {technology[tabIndex].description}
+          {technology[activeTab].description}
         </p>
       </div>
       <picture className="technology__term-photo">
         <source
           className="technology__term-photo"
-          srcSet={technology[tabIndex].images.portrait}
+          srcSet={technology[activeTab].images.portrait}
           media="(min-width: 68.75em)"
         />
         <img
           className="technology__term-photo"
-          src={technology[tabIndex].images.landscape}
+          src={technology[activeTab].images.landscape}
           alt="term"
         />
       </picture>

@@ -1,39 +1,14 @@
-import { useEffect, useReducer } from 'react';
-import tabsReducer from 'reducers/tabs-reducer';
+import { useState, useCallback } from 'react';
 
-const useTabs = (data, defaultTabIndex) => {
-  const initialTabsState = {
-    activeTabIndex: defaultTabIndex,
-    maxTabIndex: data.length - 1,
-  };
-  const [state, dispatch] = useReducer(tabsReducer, initialTabsState);
-
-  const onTabSelectedHandler = (index) => {
-    dispatch({ type: 'TAB_SELECTED', value: index });
-  };
-
-  useEffect(() => {
-    const keydownHandlers = new Map([
-      [39, dispatch.bind(null, { type: 'KEYDOWN_RIGHT' })],
-      [37, dispatch.bind(null, { type: 'KEYDOWN_LEFT' })],
-    ]);
-
-    const onKeyDownHandler = ({ keyCode }) => {
-      const handler = keydownHandlers.get(keyCode);
-      if (!handler) return;
-      handler();
-    };
-
-    document.addEventListener('keydown', onKeyDownHandler);
-
-    return () => {
-      document.removeEventListener('keydown', onKeyDownHandler);
-    };
+const useTabs = (defaultTabIndex) => {
+  const [activeTab, setActiveTab] = useState(defaultTabIndex);
+  const onTabChangeHandler = useCallback((tabIndex) => {
+    setActiveTab(tabIndex);
   }, []);
 
   return {
-    tabIndex: state.activeTabIndex,
-    onTabSelectedHandler,
+    activeTab,
+    onTabChangeHandler,
   };
 };
 

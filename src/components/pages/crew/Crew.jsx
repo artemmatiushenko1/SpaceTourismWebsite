@@ -6,7 +6,7 @@ import { Tabs } from 'components/common';
 
 const Crew = () => {
   const { crew } = data;
-  const { tabIndex, onTabSelectedHandler } = useTabs(crew, 0);
+  const { activeTab, onTabChangeHandler } = useTabs(0);
 
   return (
     <section className="crew">
@@ -17,24 +17,24 @@ const Crew = () => {
         <div className="crew__text-box">
           <Tabs
             className="crew__dots-component"
-            value={tabIndex}
+            value={activeTab}
             data={new Array(crew.length).fill(' ')}
-            onTabSelected={onTabSelectedHandler}
+            onChange={onTabChangeHandler}
             tabClassName="crew__dot"
           />
           <h4 className="crew__position-name heading--fourth">
-            {crew[tabIndex].role}
+            {crew[activeTab].role}
           </h4>
           <h3 className="crew__member-name heading--tertiary">
-            {crew[tabIndex].name}
+            {crew[activeTab].name}
           </h3>
           <p className="crew__member-description body-text">
-            {crew[tabIndex].bio}
+            {crew[activeTab].bio}
           </p>
         </div>
       </div>
       <img
-        src={crew[tabIndex].images.png}
+        src={crew[activeTab].images.png}
         alt="crewMember"
         className="crew__member-photo"
       />
